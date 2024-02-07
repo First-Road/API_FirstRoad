@@ -24,7 +24,6 @@ public class Trilha {
     private String descricao_trilha;
     private Time tempo_trilha;
     private String situacao;
-    private UUID id_cargo;
-    private UUID id_uo;
+
     private UUID id_conteudo;
 }
