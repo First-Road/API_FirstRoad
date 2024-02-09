@@ -71,8 +71,8 @@ public class UnidadeController {
     }
 
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Object> deletarConteudo(@PathVariable(value = "id") UUID id){
+    @DeleteMapping("/{idUnidade}")
+    public ResponseEntity<Object> deletarConteudo(@PathVariable(value = "idUnidade") UUID id){
         Optional<Unidade> conteudoBuscado = unidadeRepository.findById(id);
 
         if (conteudoBuscado.isEmpty()){
