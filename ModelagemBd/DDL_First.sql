@@ -20,7 +20,6 @@ CREATE TABLE tb_conteudo(
 	titulo_conteudo VARCHAR(50) NOT NULL,
     descricao_conteudo VARCHAR(255) NOT NULL,
     link VARCHAR(255) NOT NULL,
-    tempo_conteudo TIME NOT NULL,
     tipo TINYINT NOT NULL,
     
     PRIMARY KEY(id)

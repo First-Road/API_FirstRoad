@@ -25,5 +25,4 @@ public class Trilha {
     private Time tempo_trilha;
     private String situacao;
 
-    private UUID id_conteudo;
 }

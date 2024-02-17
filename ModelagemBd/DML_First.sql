@@ -20,7 +20,12 @@ INSERT INTO tb_conteudo VALUES(UUID_TO_BIN(UUID()),'SpringBoot Volume1', 	'Apren
 INSERT INTO tb_conteudo VALUES(UUID_TO_BIN(UUID()),'SpringBoot Volume 2', 	'Aprendendo SpringBoot do zero ao avançado!! Volume 2',				'https://www.udemy.com.br/sbv2',		'40:30:00', 2 );
 INSERT INTO tb_conteudo VALUES(UUID_TO_BIN(UUID()),'SpringBoot Volume 3', 	'Aprendendo SpringBoot do zero ao avançado!! Volume 3',				'https://www.udemy.com.br/sbv3',		'80:00:00', 3 );
     select BIN_TO_UUID(id), titulo_conteudo, descricao_conteudo, link, tipo FROM tb_conteudo;
-    alter table tb_trilha Drop column id_uo;
+    select * from tb_trilha_conteudo;
+    
+INSERT INTO tb_trilha_conteudo VALUES(UUID_TO_BIN(UUID()),UUID_TO_BIN('382b9874-d8aa-4c0f-ab94-2d0fb2fe6c36'), false);
+    
+    select * from tb_conteudo;
+    alter table tb_conteudo Drop column tempo_conteudo;
 /* UNIDADES ORGANIZACIONAIS */
 INSERT INTO tb_unidades_organizacionais VALUES(UUID_TO_BIN(UUID()),	'Atendimento',	UUID_TO_BIN('b9ba2219-4def-4038-a58c-b8b189159fc7'),	UUID_TO_BIN('f37a9c5b-c3a3-11ee-9a16-4851c580186b'));
 INSERT INTO tb_unidades_organizacionais VALUES(UUID_TO_BIN('2149319a-87c9-45f5-b978-002ea34c3472'),	'Suporte',		UUID_TO_BIN('425689b9-8db7-4782-8d6c-a940f739fd0b'),	UUID_TO_BIN('0046c381-941c-11ee-bcc9-54bf6410fda9'));
@@ -32,18 +37,24 @@ select * from tb_unidades_organizacionais;
 /* TRILHA */
 INSERT INTO tb_trilha VALUES(UUID_TO_BIN(UUID())	,'Trilha Dev iniciante 5',		'Esta trilha contem passos iniciais para um dev iniciante',	'01:30:00', 0);
 INSERT INTO tb_trilha VALUES(UUID_TO_BIN(UUID())	,'Nova Trilha Dev Avançado',	'Esta trilha contem passos iniciais para um avançado     ',	'08:30:00',	1);
-select BIN_TO_UUID(id) from tb_conteudo;
-select BIN_TO_UUID(id) from tb_trilha;
+select BIN_TO_UUID(id), titulo_conteudo from tb_conteudo;
+select BIN_TO_UUID(id), titulo_trilha from tb_trilha;
+select * from tb_trilha;
+
+
+select BIN_TO_UUID(id_trilha), BIN_TO_UUID(id_conteudo), concluido from tb_trilha_conteudo;
 select * from tb_trilha_conteudo;
 
-Drop table tb_trilha_conteudo;
+INSERT INTO tb_trilha_conteudo VALUES ( UUID_TO_BIN('3b657a78-9811-417c-ba7e-9706cc13ec02') ,UUID_TO_BIN('382b9874-d8aa-4c0f-ab94-2d0fb2fe6c36'), false);
+INSERT INTO tb_trilha_conteudo VALUES ( UUID_TO_BIN('3b657a78-9811-417c-ba7e-9706cc13ec02') ,UUID_TO_BIN('8bd553a0-103a-4404-9873-b5303ba3e206'), false);
+INSERT INTO tb_trilha_conteudo VALUES( UUID_TO_BIN('3b657a78-9811-417c-ba7e-9706cc13ec02')	, UUID_TO_BIN('8cb9c2cc-9791-4d0f-b0bb-64073fba5511'), false);
 
-alter table tb_trilha_conteudo Drop column concluido;
-
-INSERT INTO tb_trilha_conteudo VALUES ( UUID_TO_BIN('5e13bbf8-8e7a-4165-8c0d-219f3c6df80f') ,UUID_TO_BIN('453807a6-8d53-435f-923c-aca1068893be'), false);
-INSERT INTO tb_trilha_conteudo VALUES ( UUID_TO_BIN('5e13bbf8-8e7a-4165-8c0d-219f3c6df80f') ,UUID_TO_BIN('cdb4e8b0-b057-458e-a99a-89d33d7e343d'), false);
-
-INSERT INTO tb_trilha_conteudo VALUES( UUID_TO_BIN('891631f2-c3a4-11ee-9a16-4851c580186b')	, UUID_TO_BIN('417161bd-bfcd-11ee-8546-4851c580186b'), false);
-INSERT INTO tb_trilha_conteudo VALUES( UUID_TO_BIN('891631f2-c3a4-11ee-9a16-4851c580186b')	, UUID_TO_BIN('4216707c-bfcd-11ee-8546-4851c580186b'), false);
+INSERT INTO tb_trilha_conteudo VALUES ( UUID_TO_BIN('586e5883-2903-4d43-8297-0826b8d2ba7b') ,UUID_TO_BIN('863996b1-0cf9-4968-a5cc-0b6c2a01afe8'), false);
+INSERT INTO tb_trilha_conteudo VALUES ( UUID_TO_BIN('586e5883-2903-4d43-8297-0826b8d2ba7b') ,UUID_TO_BIN('1cd40a0b-28c4-48ee-9b1f-9fd0898f47a2'), false);
+INSERT INTO tb_trilha_conteudo VALUES( UUID_TO_BIN('586e5883-2903-4d43-8297-0826b8d2ba7b')	, UUID_TO_BIN('8cb9c2cc-9791-4d0f-b0bb-64073fba5511'), false);
 
 select * from tb_usuario_trilha;
+
+select  BIN_TO_UUID(id), nome, email, senha, nif, data_nascimento, tipo_usuario, BIN_TO_UUID(id_unidade), url_imagem, url_avatar from tb_usuarios;
+
+INSERT INTO tb_usuario_trilha VALUES ( UUID_TO_BIN('3e71507d-6e01-4f98-b550-3cc34fb82b81') ,UUID_TO_BIN('3b657a78-9811-417c-ba7e-9706cc13ec02'));

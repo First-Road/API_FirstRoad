@@ -5,6 +5,7 @@ public enum TipoConteudo {
     VIDEO("video"),
     TEXTO("texto");
 
+
     private String tipo;
 
     TipoConteudo(String tipoRecebido){

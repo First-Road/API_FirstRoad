@@ -19,7 +19,7 @@ public class Conteudo {
     private String titulo_conteudo;
     private String descricao_conteudo;
     private String link;
-    private String tipo;
+    private TipoConteudo tipo;
 
 
 }

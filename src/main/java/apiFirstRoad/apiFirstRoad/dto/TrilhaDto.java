@@ -8,7 +8,6 @@ public record TrilhaDto(
         String titulo_trilha,
         String descricao_trilha,
         Time tempo_trilha,
-        String situacao,
+        String situacao
 
-        UUID id_conteudo
 ) {}

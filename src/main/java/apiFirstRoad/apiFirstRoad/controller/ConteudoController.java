@@ -47,7 +47,7 @@ public class ConteudoController {
 
     @PostMapping(consumes = {MediaType.APPLICATION_JSON_VALUE})
     @ResponseBody
-    public ResponseEntity<Object> cadastrarConteudo(@org.jetbrains.annotations.NotNull @RequestBody ConteudoDto dadosRecebidos) {
+    public ResponseEntity<Object> cadastrarConteudo( @RequestBody ConteudoDto dadosRecebidos) {
             if (dadosRecebidos.titulo_conteudo() == null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("O conteudo deve ser informado");
         }
