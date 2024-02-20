@@ -16,32 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `tb_unidades_organizacionais`
+-- Table structure for table `tb_usuario_trilha`
 --
 
-DROP TABLE IF EXISTS `tb_unidades_organizacionais`;
+DROP TABLE IF EXISTS `tb_usuario_trilha`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `tb_unidades_organizacionais` (
-  `id` binary(16) NOT NULL,
-  `nome_departamento` varchar(200) NOT NULL,
+CREATE TABLE `tb_usuario_trilha` (
   `id_usuario` binary(16) NOT NULL,
-  `id_unidade` binary(16) NOT NULL,
-  PRIMARY KEY (`id`),
+  `id_trilha` binary(16) NOT NULL,
   KEY `id_usuario` (`id_usuario`),
-  KEY `id_unidade` (`id_unidade`),
-  CONSTRAINT `tb_unidades_organizacionais_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `tb_usuarios` (`id`),
-  CONSTRAINT `tb_unidades_organizacionais_ibfk_2` FOREIGN KEY (`id_unidade`) REFERENCES `tb_unidades` (`id`)
+  KEY `id_trilha` (`id_trilha`),
+  CONSTRAINT `tb_usuario_trilha_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `tb_usuarios` (`id`),
+  CONSTRAINT `tb_usuario_trilha_ibfk_2` FOREIGN KEY (`id_trilha`) REFERENCES `tb_trilha` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tb_unidades_organizacionais`
+-- Dumping data for table `tb_usuario_trilha`
 --
 
-LOCK TABLES `tb_unidades_organizacionais` WRITE;
-/*!40000 ALTER TABLE `tb_unidades_organizacionais` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tb_unidades_organizacionais` ENABLE KEYS */;
+LOCK TABLES `tb_usuario_trilha` WRITE;
+/*!40000 ALTER TABLE `tb_usuario_trilha` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tb_usuario_trilha` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -53,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-02-19 20:20:23
+-- Dump completed on 2024-02-20 19:53:53

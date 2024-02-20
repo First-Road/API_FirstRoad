@@ -16,30 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `tb_trilha_conteudo`
+-- Table structure for table `tb_trilha`
 --
 
-DROP TABLE IF EXISTS `tb_trilha_conteudo`;
+DROP TABLE IF EXISTS `tb_trilha`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `tb_trilha_conteudo` (
-  `id_trilha` binary(16) NOT NULL,
-  `id_conteudo` binary(16) NOT NULL,
-  `concluido` bit(1) NOT NULL,
-  KEY `id_trilha` (`id_trilha`),
-  KEY `id_conteudo` (`id_conteudo`),
-  CONSTRAINT `tb_trilha_conteudo_ibfk_1` FOREIGN KEY (`id_trilha`) REFERENCES `tb_trilha` (`id`),
-  CONSTRAINT `tb_trilha_conteudo_ibfk_2` FOREIGN KEY (`id_conteudo`) REFERENCES `tb_conteudo` (`id`)
+CREATE TABLE `tb_trilha` (
+  `id` binary(16) NOT NULL,
+  `titulo_trilha` varchar(100) NOT NULL,
+  `descricao_trilha` varchar(255) NOT NULL,
+  `tempo_trilha` time NOT NULL,
+  `situacao` tinyint NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tb_trilha_conteudo`
+-- Dumping data for table `tb_trilha`
 --
 
-LOCK TABLES `tb_trilha_conteudo` WRITE;
-/*!40000 ALTER TABLE `tb_trilha_conteudo` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tb_trilha_conteudo` ENABLE KEYS */;
+LOCK TABLES `tb_trilha` WRITE;
+/*!40000 ALTER TABLE `tb_trilha` DISABLE KEYS */;
+INSERT INTO `tb_trilha` VALUES (_binary '≠∑S*\ÀOCú\Ô\‰\"îz¢Y','Jornada pela Excel√™ncia: Onboarding na VW','Uma jornada de onboarding pela Volkswagen, mergulhando em sua hist√≥ria, inova√ß√£o e cultura colaborativa.','04:00:00',0);
+/*!40000 ALTER TABLE `tb_trilha` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-02-19 20:20:23
+-- Dump completed on 2024-02-20 19:53:53

@@ -16,34 +16,39 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `tb_unidades`
+-- Table structure for table `tb_usuarios`
 --
 
-DROP TABLE IF EXISTS `tb_unidades`;
+DROP TABLE IF EXISTS `tb_usuarios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `tb_unidades` (
+CREATE TABLE `tb_usuarios` (
   `id` binary(16) NOT NULL,
-  `razao_social` varchar(50) NOT NULL,
-  `cnpj` varchar(14) NOT NULL,
-  `logradouro` varchar(200) NOT NULL,
-  `numero` int NOT NULL,
-  `complemento` varchar(100) DEFAULT NULL,
-  `bairro` varchar(200) NOT NULL,
-  `cep` varchar(9) NOT NULL,
+  `nome` varchar(255) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `senha` varchar(60) NOT NULL,
+  `nif` int NOT NULL,
+  `data_nascimento` date NOT NULL,
+  `tipo_usuario` tinyint NOT NULL,
+  `id_unidade` binary(16) NOT NULL,
+  `url_imagem` varchar(255) DEFAULT NULL,
+  `url_avatar` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `cnpj` (`cnpj`)
+  UNIQUE KEY `email` (`email`),
+  UNIQUE KEY `nif` (`nif`),
+  KEY `id_unidade` (`id_unidade`),
+  CONSTRAINT `tb_usuarios_ibfk_1` FOREIGN KEY (`id_unidade`) REFERENCES `tb_unidades` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tb_unidades`
+-- Dumping data for table `tb_usuarios`
 --
 
-LOCK TABLES `tb_unidades` WRITE;
-/*!40000 ALTER TABLE `tb_unidades` DISABLE KEYS */;
-INSERT INTO `tb_unidades` VALUES (_binary '\ÖÛ¥!\ÌS\îºS`•Vfø','VolksWagem do Brasil','59104422000150','Estrada Marginal da Via Anchleta, Km 23,5 Ala 17 ',0,'Planta SÃ£o Bernardo do Campo','Demarch','09823901'),(_binary 'Ú˜\Þt\ÌS\îºS`•Vfø','VolksWagem do Brasil','06020318000544','Rua Volkswagen ',100,'Planta Resende','Polo Industrial','27537803'),(_binary '\Ý\Ô{j\ÌS\îºS`•Vfø','VolksWagem do Brasil','59104422002446','Avenida Carlos Pedroso da Silveira ',10000,'Planta TaubatÃ©','Polo Industrial','12043000');
-/*!40000 ALTER TABLE `tb_unidades` ENABLE KEYS */;
+LOCK TABLES `tb_usuarios` WRITE;
+/*!40000 ALTER TABLE `tb_usuarios` DISABLE KEYS */;
+INSERT INTO `tb_usuarios` VALUES (_binary '9\æ®V’H¤Š›#LZN”','Lucas','lucas@vw.com','$2a$10$jZGqYpkJEmzbDU2wfzKG5urzq6ejtbj6IrsdWLuBPw2N9/Zk/c5ya',29035678,'1992-05-05',1,_binary 'Ú˜\Þt\ÌS\îºS`•Vfø','15022024194931.jpg',NULL),(_binary '>qP}nO˜µP<\ÃO¸+','Everton','everton@vw.com','$2a$10$FSuU7gJ9kpdsl5ec6seReunTBOhwf9ZvyR6jZx15jZ6IAeo8miUwS',2896427,'1998-04-04',0,_binary 'Ú˜\Þt\ÌS\îºS`•Vfø','15022024194851.jpeg',NULL),(_binary '²¬Uh+LƒšúBÕ©Œ´s','Kauan','Kauan@vw.com','$2a$10$otRyi2mz1JjGud7tTrt/kuKQq7HogUdudcMWUzzvnCzbNj721t3cS',26514589,'2004-06-06',2,_binary 'Ú˜\Þt\ÌS\îºS`•Vfø','15022024194757.jpg',NULL);
+/*!40000 ALTER TABLE `tb_usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -55,4 +60,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-02-19 20:20:23
+-- Dump completed on 2024-02-20 19:53:53

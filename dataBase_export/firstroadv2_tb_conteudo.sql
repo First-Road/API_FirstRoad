@@ -39,7 +39,7 @@ CREATE TABLE `tb_conteudo` (
 
 LOCK TABLES `tb_conteudo` WRITE;
 /*!40000 ALTER TABLE `tb_conteudo` DISABLE KEYS */;
-INSERT INTO `tb_conteudo` VALUES (_binary '	∑\‹(tDu¶1–öÜ0','Trabalho em Equipe: Rumo ao Sucesso Coletivo','Explore uma cultura corporativa que valoriza a coopera√ß√£o e o compartilhamento de ideias para alcan√ßar objetivos comuns.','https://www.youtube.com/watch?v=EPqHYWVNz2U',0,NULL),(_binary 'Ñï∑\ÈGsæQ|ç.0õc','Inova√ß√£o e Sustentabilidade na Volkswagen','Explorando os avan√ßos em ve√≠culos el√©tricos, condu√ß√£o aut√¥noma e redu√ß√£o de emiss√µes, al√©m dos compromissos com a responsabilidade corporativa e pr√°ticas sustent√°veis. ','https://carrostech.com/grandes-marcas/15/02/2023/volkswagen-liderando-inovacao-e-sustentabilidade-no-setor-automotivo/',2,NULL),(_binary 'ã\’S†:Dòsµ0;£\‚','Boas Vindas!!','Seja bem vindo ao mundo VolksWagen','file:///C:/Users/32599952859/Downloads/Boas-Vindas.pdf',0,NULL),(_binary '™\¬J\ ¸M£W†ï(°\∆','Conhecendo as F√°bricas VolksWagen','Vamos embarcar em uma viajem pelo mundo VolksWagen e conhecer as f√°bricas e pa√≠ses nos quais estamos instalados. ','https://www.youtube.com/watch?v=855kW48jGK8',1,NULL);
+INSERT INTO `tb_conteudo` VALUES (_binary 'ã\’S†:Dòsµ0;£\‚','Boas Vindas!!','Seja bem vindo ao mundo VolksWagen','file:///C:/Users/32599952859/Downloads/Boas-Vindas.pdf',0,NULL),(_binary '™\¬J\ ¸M£W†ï(°\∆','Conhecendo as F√°bricas VolksWagen','Vamos embarcar em uma viajem pelo mundo VolksWagen e conhecer as f√°bricas e pa√≠ses nos quais estamos instalados. ','https://www.youtube.com/watch?v=855kW48jGK8',1,NULL),(_binary 'ΩıG8ÉH±ï\"üV§}\◊','Inova√ß√£o e Sustentabilidade na Volkswagen','Explorando os avan√ßos em ve√≠culos el√©tricos, condu√ß√£o aut√¥noma e redu√ß√£o de emiss√µes, al√©m dos compromissos com a responsabilidade corporativa e pr√°ticas sustent√°veis. ','https://carrostech.com/grandes-marcas/15/02/2023/volkswagen-liderando-inovacao-e-sustentabilidade-no-setor-automotivo/',2,NULL),(_binary '˛˜{xH\Ó¶\„\‡~\⁄','Trabalho em Equipe: Rumo ao Sucesso Coletivo','Explore uma cultura corporativa que valoriza a coopera√ß√£o e o compartilhamento de ideias para alcan√ßar objetivos comuns.','https://www.youtube.com/watch?v=EPqHYWVNz2U',0,NULL);
 /*!40000 ALTER TABLE `tb_conteudo` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-02-19 20:20:23
+-- Dump completed on 2024-02-20 19:53:53
